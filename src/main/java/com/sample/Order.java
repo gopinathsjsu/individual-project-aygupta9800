@@ -12,11 +12,6 @@ import java.util.HashMap;
 import com.sample.interfaces.IOrderInterface;
 import java.util.*;
 
-
-@WebServlet(
-        name = "OrderServlet",
-        urlPatterns = "/order"
-)
 @MultipartConfig
 public class Order implements IOrderInterface {
     private static final int BUFFER_SIZE = 2048;
@@ -43,7 +38,7 @@ public class Order implements IOrderInterface {
         String[] inputContent = value.toString().split("\n");
 
         try {
-            OutputStream outputStream = new FileOutputStream("output.txt");
+//            OutputStream outputStream = new FileOutputStream("output.txt");
             String outputTxt;
             String invalidRequestStr = isValidOrderRequest(inputContent);
             if (invalidRequestStr.length() == 0) {
@@ -60,18 +55,26 @@ public class Order implements IOrderInterface {
 //                cards.getCardList().add(1234567891014519);
 //                cards.setCardList(cards.getCardList());
                 List<Integer> cardsList = cards.getCardList();
-                for(int i=0;i<cardsList.size();i++){
-                    System.out.println("cardno." + cardsList.get(i));
-                }
+//                for(int i=0;i<cardsList.size();i++){
+//                    System.out.println("cardno." + cardsList.get(i));
+//                }
                 double totalAmountPaid = calculateTotalAmountPaid(inputContent);
                 outputTxt = "Total amount paid: \n "+ totalAmountPaid;
+                OutputStream outputStream = new FileOutputStream("output.csv");
+                outputStream.write(outputTxt.getBytes(StandardCharsets.UTF_8));
+                outputStream.flush();
+                outputStream.close();
             } else {
                 outputTxt = "Please correct quantities\n"+ invalidRequestStr;
+                OutputStream outputStream = new FileOutputStream("errorOutput.txt");
+                outputStream.write(outputTxt.getBytes(StandardCharsets.UTF_8));
+                outputStream.flush();
+                outputStream.close();
             }
             System.out.println(outputTxt);
-            outputStream.write(outputTxt.getBytes(StandardCharsets.UTF_8));
-            outputStream.flush();
-            outputStream.close();
+//            outputStream.write(outputTxt.getBytes(StandardCharsets.UTF_8));
+//            outputStream.flush();
+//            outputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

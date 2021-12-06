@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cards {
-    private static Cards singletonObject = null;
+    private static Cards cardsSingletonObj = null;
     List<Integer> cardList = new ArrayList<>();
 
     public List<Integer> getCardList() {
@@ -16,9 +16,9 @@ public class Cards {
     }
 
     public static Cards getInstance() {
-        if(singletonObject == null) {
-            singletonObject = new Cards();
+        if(cardsSingletonObj == null) {
+            cardsSingletonObj = new Cards();
         }
-        return singletonObject;
+        return cardsSingletonObj;
 }
 }
