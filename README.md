@@ -16,7 +16,7 @@ brew install maven
 2. add a new configuration of Application type, set main Class to Main.java and set program arguments to input csv file path. File name should not have space in name so that it can be executed.
 <img width="1440" alt="Screen Shot 2021-12-05 at 6 49 05 PM" src="https://user-images.githubusercontent.com/55319952/144781082-56cea62b-418b-46d2-b0f1-393167bbf13f.png">
 3. Run the Main file
-console will print output result and an output.txt file will be generated for success case while errorOutput.txt file in error case in project root folder.
+console will print output result and an output.csv file will be generated for success case while errorOutput.txt file in error case in project root folder.
 
 ## Design Pattern used in Project:
 1. Singleton Pattern: 
