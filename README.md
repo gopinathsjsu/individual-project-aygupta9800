@@ -39,6 +39,11 @@ Before we print the output of the order, we check the availability of stock in t
 
 <img width="423" alt="Screen Shot 2021-12-05 at 6 57 38 PM" src="https://user-images.githubusercontent.com/55319952/144780355-7073ea37-0b3c-431d-bddb-c57951bfe9da.png">
 
+card number ss:
+
+
+<img width="423" alt="Screen Shot 2021-12-05 at 10 05 37 PM" src="https://user-images.githubusercontent.com/55319952/144795942-04ac464f-45e4-4e6e-bcc2-5eab46a53bbd.png">
+
 # Class Diagram
 ![ClassDiagram drawio](https://user-images.githubusercontent.com/55319952/144783173-cf09dc31-96c4-4387-b7f8-d3295b2617db.png)
 
